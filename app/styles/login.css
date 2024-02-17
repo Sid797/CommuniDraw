@@ -1,0 +1,120 @@
+/* LOGIN */
+.logo {
+    position: absolute;   
+    top: 10%;
+
+    width: clamp(100px, 20vh, 256px);
+
+    animation: appear-login-logo var(--appear-login-logo-time) ease-in-out;
+}
+
+.login {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+
+    z-index: 1;
+    background: var(--bg-gradient);
+
+    font-family: var(--font);
+}
+
+.login-inputs {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    
+    gap: 1rem;
+
+    font-family: inherit;
+
+    transform: scale(0);
+
+    animation: appear-login-form 0.5s calc(var(--appear-login-logo-time) - 0.5s) ease-in-out forwards;
+}
+
+.login-inputs > label {
+    font-size: 2rem;
+    font-family: inherit;
+    color: white;
+}
+
+.login-inputs > input[type="text"] {
+    outline: none;
+
+    font-size: 2rem;
+    text-align: center;
+    font-family: inherit;
+
+    background-color: white;
+    padding: 0.5rem;
+
+    border-radius: 0.5rem;
+    border: 3px solid var(--accent-color);
+
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+}
+
+.login-inputs > input[type="submit"] {
+    outline: none;
+    border: none;
+
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: inherit;
+    text-align: center;
+    color: white;
+
+    background-color: var(--accent-color);
+    padding: 1rem 2rem;
+
+    border-radius: 100vw;
+    
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.5);
+
+    cursor: pointer;
+}
+
+
+
+/* ANIMATIONS */
+@keyframes appear-login-logo {
+    0% {
+        opacity: 0;
+        top: 40%;
+    }
+    50% {
+        opacity: 1;
+        top: 40%;
+    }
+    85% {
+        top: 9.5%;
+    }
+    100% {
+        top: 10%;
+    }
+    
+}
+
+@keyframes appear-login-form {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

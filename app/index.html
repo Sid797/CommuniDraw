@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <link rel="icon" href="assets/logo.svg">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.1/p5.min.js" 
+        integrity="sha512-NxocnqsXP3zm0Xb42zqVMvjQIktKEpTIbCXXyhBPxqGZHqhcOXHs4pXI/GoZ8lE+2NJONRifuBpi9DxC58L0Lw==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/login.css">
+</head>
+<body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io(); 
+    </script>
+
+    <section id="login" class="login">
+        <img src="./assets/logo.svg" alt="PixelChat" class="logo">
+        <form action="/" method="post" class="login-inputs" id="login-form">
+            <label for="username">Choose your username:</label>
+            <input type="text" autocomplete="off" name="username" id="username" placeholder="Username" required>
+            <input type="submit" value="Use this username">
+        </form>
+    </section>
+
+    <section class="main">
+        <div class="drawing-container">
+            <div class="options-container">
+                <div class="colorpicker-container">
+                    <div class="swatches">
+                        <button data-color="#ff0000" class="swatch"></button>
+                        <button data-color="#f58400" class="swatch"></button>
+                        <button data-color="#0500ff" class="swatch"></button>
+                        <button data-color="#00a3ff" class="swatch"></button>
+                        <button data-color="#00ff57" class="swatch"></button>
+                        <button data-color="#c5ff49" class="swatch"></button>
+                        <button data-color="#faff00" class="swatch"></button>
+                        <button data-color="#fffb8f" class="swatch"></button>
+                        <button data-color="#ffffff" class="swatch"></button>
+                        <button data-color="#000000" class="swatch"></button>
+                        <button data-color="#b3b3b3" class="swatch"></button>
+                        <button data-color="#646464" class="swatch"></button>
+                    </div>
+                    <input type="color" name="colorpicker" id="colorpicker" value="#000000" class="colorpicker">
+                </div>
+                <button id="clear-button" class="button">Clear</button>
+            </div>
+            <main class="canvas-container">
+            </main>
+        </div>
+
+        <section class="chat">
+            <div class="messages"></div>
+
+            <form action="/" method="post" id="chat-form">
+                <input type="text" autocomplete="off" name="message" id="message" placeholder="Type a message...">
+                <input type="submit" value="Send" class="button">
+            </form>
+        </section>
+        
+    </section>
+
+
+    <script src="./js/ws/Chat.ws.js"></script>
+    <script src="./js/ws/Canvas.ws.js"></script>
+
+    <script src="./js/canvas.js"></script>
+    <script src="./js/login.js"></script>
+</body>
+</html>
