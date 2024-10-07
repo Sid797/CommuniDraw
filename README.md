@@ -1,3 +1,7 @@
+**CommuniDraw**
+
+
+A figma clone with collaborative drawing and ai image generation and enhancement.
 
 **Follow these steps to set up the project locally on your machine.**
 
